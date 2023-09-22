@@ -100,3 +100,22 @@
 #     return False;
   
 # primoONo(number);
+
+# #* 8) Construir una función que tire los dados. La función recibe un entero que corresponde a la cantidad
+# #* de dados a tirar. Todos los dados son de 6 caras. La función devuelve la suma de los valores de los
+# #* dados. Investigar cómo obtener números al azar.
+
+# # import random
+# import random;
+
+# diceCount = int(input("Ingrese cantidad de dados a tirar: "));
+
+# def dicethrows (numberOfThrows):
+#   totalCount = 0;
+
+#   for number in range(numberOfThrows):
+#     totalCount += random.randint(1, 6);
+
+#   return totalCount;
+
+# print(dicethrows(diceCount));
