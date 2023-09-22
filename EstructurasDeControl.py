@@ -68,22 +68,43 @@ if (len(str(seconds)) == 1) : seconds = f"0{seconds}";
   
 print(f"{hours}:{minutes}:{seconds}");
 
+#* 4
+# # Datos para trabajar;
+# packageWeight = int(input("Ingrese peso del paquete a llenar: "));
+# cokiesCount = 0;
+# programStatus = True;
 
-
-
-
-
-
-
-
-
-# for numbers in range(seconds):
-#   print(numbers)
-#   minutesCount += 1
-#   if (minutesCount == 60):
-#     minutes += 1;
+# while programStatus != False:       #Ingreso de datos y consiguiente suma;
+#   cokies = int(input("Ingrese peso de galletitas a agregar al paquete: "));
+#   changePackage = None;
   
-#   if (minutes == 60):
-#     minutes = 0;
+#   cokiesCount += cokies;
+#                                     #Comprobaciones cuando el paquete se llena;
+#   if (packageWeight <= cokiesCount):
+#     while True:
+#       if (changePackage == None):
+#         changePackage = input("Paquete lleno, introduszca 'next' para poner el proximo o 'exit' para salir: ");
+#       else:
+#         changePackage = input(f"{changePackage} es una palabra errónea, por favor vuelva a ingresarla: ");
+#                                         #Reinicio o salida del programa;
+#       if (changePackage.lower() == "next"):
+#         cokiesCount = 0;
+#         break;
+#       elif (changePackage.lower() == "exit"):
+#         print("Programa terminado.");
+#         programStatus = False;
+#         break;
+    
+#* 5
+# silo = int(input("Ingrese la capacidad del silo: "));
+# flour = 0;
 
-# print(minutes)
+# while flour < silo:
+#   flour = int(input("Ingrese cantidad de harina requerida: "));
+
+#   if (silo - flour >= 0):
+#     print("Hay suficiente harina para realiazr la preparación.");
+#     silo -= flour;
+#   else:
+#     print(f"Cantidad insuficiente. Quedan en el silo: {silo} de harina");
+#     flour = 0;
