@@ -1,4 +1,4 @@
-                                          #! Estructuras de control
+                                         # #! Estructuras de control
                              
 # # *1
 # day = int(input("Ingrese el día: "));
@@ -95,19 +95,19 @@
 #         programStatus = False;
 #         break;
     
-#* 5
-silo = int(input("Ingrese la capacidad del silo: "));
-flour = 0;
+# #* 5
+# silo = int(input("Ingrese la capacidad del silo: "));
+# flour = 0;
 
-while flour < silo:
-  flour = int(input("Ingrese cantidad de harina requerida para la preparación: "));
+# while flour < silo:
+#   flour = int(input("Ingrese cantidad de harina requerida para la preparación: "));
 
-  if (silo - flour >= 0):
-    print("Hay suficiente harina para realiazr la preparación.");
-    silo -= flour;
-    flour = 0;
-  else:
-    print(f"Cantidad insuficiente. Quedan en el silo: {silo} de harina");
-    flour = 0;
+#   if (silo - flour >= 0):
+#     print("Hay suficiente harina para realiazr la preparación.");
+#     silo -= flour;
+#     flour = 0;
+#   else:
+#     print(f"Cantidad insuficiente. Quedan en el silo: {silo} de harina");
+#     flour = 0;
 
-print("Harina del silo terminada");
+# print("Harina del silo terminada");
