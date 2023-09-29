@@ -50,3 +50,46 @@
 
 # print(f"El volumen total en litros de la caja es de: {volumeAndSurface(boxLen, boxHigh, boxWidth)[0]}");
 # print(f"La superficie total en cm² de la caja es de: {volumeAndSurface(boxLen, boxHigh, boxWidth)[1]}");
+
+# * 3) El método más fácil para encriptar un mensaje consiste en el de desplazamiento, cada carácter se desplaza
+# * una cantidad fija llamada clave. Por ejemplo si la clave es 1, la palabra HOLA sería IPMB. Realizar 2
+# * funciones, una para encriptar y otra para desencriptar. A la función se le pasa el texto y la clave (un
+# * entero), y debe devolver un texto. Una pista, la función ord() convierte un carácter en un su código ASCII y
+# * la función chr() convierte el código ASCII en carácter. Tener en cuenta que el texto resultante debe estar
+# * compuesto por las letras del abecedario. Pueden ignorar las diferencias entre mayúsculas y minúsculas, y
+# * pueden ignorar de convertir los signos de puntuación. Opcional, pueden hacer el encriptado más
+# * complejo. Opcional, pueden hacer una sola función que encripte y desencripte, a la misma se le pasa el
+# * texto, la clave (igual que entes) y la operación que se desea realizar (encriptar o desencriptar).
+
+# word = input("Ingrese palabra a encriptar o desencriptar: ");
+
+def encriptedWord(word, key):
+  encriptedArray = []; 
+  
+  for letter in range(len(word)):
+    encriptedArray.append(chr(ord(word[letter]) + key));  
+     
+  return "".join(encriptedArray);
+  
+def desencriptWord(word, key=0):
+  desencriptedArray = [];
+  
+  for letter in range(len(word)):
+    desencriptedArray.append(chr(ord(word[letter]) - key));
+    
+  return "".join(desencriptedArray);
+  
+def encriptOrDesencriptWord(word, key):
+  condition = input("Ingrese '1' para encriptar, '2' para desencriptar: ");
+  
+  if (condition == "1"): return encriptedWord(word, key);
+  if (condition == "2"): return print(desencriptWord(word, key))
+  else: encriptOrDesencriptWord(word, key);
+
+  
+  
+encriptOrDesencriptWord("ipmb", 1);
+  
+
+
+  
