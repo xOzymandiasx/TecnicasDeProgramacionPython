@@ -92,19 +92,53 @@
 # encriptOrDesencriptWord(word, value);
   
 
-# * 4) Construir una función que reciba el primer nombre, el segundo nombre y apellido de una persona y
-# * devuelva un string con Apellido, Primer nombre inicial del segundo nombre punto. Tener en cuenta que el
-# * segundo nombre es opcional en ese caso no devuelve la inicial del segundo nombre. Opcional, convertir a
-# * mayúscula la inicial de cada nombre y apellido.
+# # * 4) Construir una función que reciba el primer nombre, el segundo nombre y apellido de una persona y
+# # * devuelva un string con Apellido, Primer nombre inicial del segundo nombre punto. Tener en cuenta que el
+# # * segundo nombre es opcional en ese caso no devuelve la inicial del segundo nombre. Opcional, convertir a
+# # * mayúscula la inicial de cada nombre y apellido.
 
 # name1 = input("ingrese su nombre: ").capitalize();
-name2 = input("ingrese, si posee, su segundo nombre: ").capitalize();
+# name2 = input("ingrese, si posee, su segundo nombre, de lo contrario pulse enter: ").capitalize();
 # surname = input("ingrese su apellido: ").capitalize();
 
-def completeStringName(name, name2 ="", surname=""):
-  if (len(name2) == 0): return f"holaaaa {name} todo eeee {surname}";
-  if (len(name2) >= 1): return f"holaaaa {name} todo {name2[0]}. eeee {surname}";
+# def completeStringName(name, name2 ="", surname=""):
+#   if (len(name2) == 0): return f"{surname} {name}";
+#   if (len(name2) >= 1): return f"{surname} {name} {name2[0]}.";
   
 
-print(len(name2));
-print(completeStringName("Sergio", name2, "ggg"));
+# print(completeStringName(name1, name2, surname));
+
+
+# * 5) Realizar una función para calcular la cantidad de rollos de empapelado que se necesita para empapelar
+# * una habitación. La función recibe las dimensiones de la habitación en metros (largo, ancho y alto), el ancho
+# * del rollo en cm y el largo del rollo en metros, debe devolver un entero con la cantidad de rollos requerida.
+# * Tengan en cuenta que, la habitación es rectangular y la altura es pareja en toda ella. Al empapelar las tiras
+# * se colocan verticalmente, cada tira debe entrar entera en toda la altura de la pared (si lo que sobra en el
+# * rollo es menos que la altura de la habitación, se debe desechar), se puede hacer que una tira cubra una
+# * esquina (la tira se comparte por 2 paredes). Nota: no tener en cuenta las aberturas como ventanas o
+# * puertas. Opcional, si no se especifican las dimensiones el rollo se debe calcular con rollos de 52cm de
+# * ancho y 10 m de largo.
+
+# large = float(input("Ingrese el largo de la habitación en metros: "));
+# width = float(input("Ingrese el ancho de la habitación en metros: "));
+# high = float(input("Ingrese el alto de la habitación en metros: "));
+
+# reelWidth = float(input("Ingrese el ancho del rollo en centimetros: "));
+# reelLarge = float(input("Ingrese el largo del rollo en metros: "));
+
+def reelsForRoom(roomLarge, roomWidth, roomHigh, reelWidt, reelLarge):
+  roomDimensions = 2 * roomLarge + 2 * roomWidth;
+  roomDimensionCount = 0;
+  roomHighCount = 0;
+  
+  reelHighCount= 0;
+  reelsCount = 0;
+  
+  while roomDimensionCount <= roomDimensions:
+    roomDimensionCount += reelWidt / 100
+    reelsCount += 1
+    
+  return reelsCount
+  
+  
+print(reelsForRoom(5, 4, 3, 6, 7));
