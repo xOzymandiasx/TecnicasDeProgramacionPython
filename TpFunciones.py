@@ -109,36 +109,53 @@
 # print(completeStringName(name1, name2, surname));
 
 
-# * 5) Realizar una función para calcular la cantidad de rollos de empapelado que se necesita para empapelar
-# * una habitación. La función recibe las dimensiones de la habitación en metros (largo, ancho y alto), el ancho
-# * del rollo en cm y el largo del rollo en metros, debe devolver un entero con la cantidad de rollos requerida.
-# * Tengan en cuenta que, la habitación es rectangular y la altura es pareja en toda ella. Al empapelar las tiras
-# * se colocan verticalmente, cada tira debe entrar entera en toda la altura de la pared (si lo que sobra en el
-# * rollo es menos que la altura de la habitación, se debe desechar), se puede hacer que una tira cubra una
-# * esquina (la tira se comparte por 2 paredes). Nota: no tener en cuenta las aberturas como ventanas o
-# * puertas. Opcional, si no se especifican las dimensiones el rollo se debe calcular con rollos de 52cm de
-# * ancho y 10 m de largo.
+# # * 5) Realizar una función para calcular la cantidad de rollos de empapelado que se necesita para empapelar
+# # * una habitación. La función recibe las dimensiones de la habitación en metros (largo, ancho y alto), el ancho
+# # * del rollo en cm y el largo del rollo en metros, debe devolver un entero con la cantidad de rollos requerida.
+# # * Tengan en cuenta que, la habitación es rectangular y la altura es pareja en toda ella. Al empapelar las tiras
+# # * se colocan verticalmente, cada tira debe entrar entera en toda la altura de la pared (si lo que sobra en el
+# # * rollo es menos que la altura de la habitación, se debe desechar), se puede hacer que una tira cubra una
+# # * esquina (la tira se comparte por 2 paredes). Nota: no tener en cuenta las aberturas como ventanas o
+# # * puertas. Opcional, si no se especifican las dimensiones el rollo se debe calcular con rollos de 52cm de
+# # * ancho y 10 m de largo.
 
 # large = float(input("Ingrese el largo de la habitación en metros: "));
 # width = float(input("Ingrese el ancho de la habitación en metros: "));
 # high = float(input("Ingrese el alto de la habitación en metros: "));
 
-# reelWidth = float(input("Ingrese el ancho del rollo en centimetros: "));
-# reelLarge = float(input("Ingrese el largo del rollo en metros: "));
+# reelWidth = input("Ingrese el ancho del rollo en centimetros o presione 'enter' para su valor por defecto: ");
+# reelLarge = input("Ingrese el largo del rollo en metros o presione 'enter' para su valor por defecto: ");
 
-def reelsForRoom(roomLarge, roomWidth, roomHigh, reelWidt, reelLarge):
-  roomDimensions = 2 * roomLarge + 2 * roomWidth;
-  roomDimensionCount = 0;
-  roomHighCount = 0;
+# if (reelWidth != ""):
+#   reelWidth = float(reelWidth);
+#   reelLarge = float(reelLarge);
+# else:
+#   reelWidth = 52.00;
+#   reelLarge = 10.00;
+
+
+# def reelsForRoom(roomLarge, roomWidth, roomHigh, reelWidt, reelLarge):
+#   roomDimensions = 2 * roomLarge + 2 * roomWidth;
+#   roomDimensionCount = 0;
   
-  reelHighCount= 0;
-  reelsCount = 0;
+#   reelHighCount= 0;
+#   reelsCount = 0;
   
-  while roomDimensionCount <= roomDimensions:
-    roomDimensionCount += reelWidt / 100
-    reelsCount += 1
-    
-  return reelsCount
+#   while roomDimensionCount <= roomDimensions:
+#     if (reelLarge == reelHighCount):
+#       reelsCount += 1;
+#       reelHighCount = 0;
+#     elif (reelLarge - reelHighCount < roomHigh):
+#       reelsCount += 1;
+#       reelHighCount = 0;
+#     else:
+#       roomDimensionCount += reelWidt / 100;
+#       reelHighCount += roomHigh;
+#       if (roomDimensionCount >= roomDimensions):
+#         reelsCount += 1;
+#         break; 
+           
+#   return int(reelsCount);
   
   
-print(reelsForRoom(5, 4, 3, 6, 7));
+# print(reelsForRoom(large, width, high, reelWidth, reelLarge));
