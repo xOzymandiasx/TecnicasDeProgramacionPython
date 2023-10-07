@@ -115,3 +115,58 @@
     
 # print("El número mayor es:", mayor);
 # print("El número menor es:", menor);
+
+
+# # * 8) Ingresar 10 números y guardarlos en un vector nuevo. Al finalizar informar el promedio.
+
+# vector = [];
+# average = 0;
+
+# for n in range(10):
+#   nuevo = int(input("Ingrese el siguiente número: "));
+#   vector.append(nuevo);
+#   average += nuevo;
+  
+# print(f"El promedio de los número ingresados es de: {average / len(vector)}");
+
+
+# # * 9) Ingresar números hasta que se ingrese un 0 (cero). Guardar los números ingresados en un vector, ignorar el 0 (cero). Al finalizar informar el número mayor, el número menor y el promedio.
+
+# vector = [];
+# mayor = 0;
+# menor = 0;
+# average = 0;
+
+# exp = None;
+# while exp != 0:
+#   exp = int(input("Ingrese el siguiente número, si desea finalizar la app introduzca un '0': "));
+#   if (exp == 0): break;
+#   vector.append(exp);
+#   average += exp;  
+
+# for elemento in vector:
+#   if (menor == 0): menor = elemento;
+#   if (elemento < menor): menor = elemento;
+    
+# for elemento in vector:
+#   if (mayor == 0): mayor = elemento;
+#   if (elemento > mayor): mayor = elemento;
+    
+# print("El número mayor es:", mayor);
+# print("El número menor es:", menor);
+# print(f"El promedio de los número ingresados es de: {average / len(vector)}");
+
+
+# # * 10) Ingresar números hasta que se ingresa un número negativo. Guardar los números en un vector, ignorar el último número negativo. Al finalizar informar la diferencia entre el primer elemento y el segundo, entre el segundo elemento y el tercero… hasta informar la diferencia entre el anteúltimo elemento y el último.
+
+# vector = [];
+
+# exp = 0;
+# while exp >= 0:
+#   exp = int(input("Ingrese el siguiente número, si desea finalizar la app introduzca un número negativo: "));
+#   if (exp < 0): break;
+#   vector.append(exp);
+  
+# for number in range(len(vector)):
+#   if (vector[number] == vector[-1]): break;
+#   print(f"la resta entre {vector[number]} y {vector[number + 1]} es de: {vector[number] - vector[number + 1]}");
