@@ -30,6 +30,20 @@
 
 # * 4) Realizar una función para buscar si hay ganador en un juego de ta-te-ti. La función recibe una matriz de 3x3 con la situación actual del juego. Cada elemento de la matriz contiene “x”, “o” o “ ”(espacio), igual que en el ejercicio 3. La función debe devolver un None si no hay ganador, o devolver “x” o “o” según si el ganador es la “x” o la “o”.
 
+tablero3 = [[" "," ","o"],["o","o","o"],["x"," ","x"]];  
 
-# tablero1 = [["x","o"," "],["o"," ","x"],["x"," ","o"]] -> None
-# tablero2 = [["x","o"," "],["x","o","x"],["x"," ","o"]] -> "x" 
+def checkForWinner(board):
+  # Horizontal
+  if (board[0][0] == board[0][1] == board[0][2]): return board[0][0];
+  elif (board[1][0] == board[1][1] == board[1][2]): return board[1][0];
+  elif (board[2][0] == board[2][1] == board[2][2]): return board[2][0];
+  # Vertical
+  elif (board[0][0] == board[1][0] == board[2][0]): return board[0][0];
+  elif (board[0][1] == board[1][1] == board[2][1]): return board[0][1];
+  elif (board[0][2] == board[1][2] == board[2][2]): return board[0][2];
+  # Diagonal
+  elif (board[0][0] == board[1][1] == board[2][2]) \
+    or (board[0][2] == board[1][1] == board[2][0]): return 2;
+  
+  
+print(f"el ganador es {checkForWinner(tablero3)}");
