@@ -79,3 +79,17 @@
 
 
 # * 5) Construir una función para calcular la superficie de un polígono cualquiera, dados sus vértices utilizando la fórmula del área de Gauss. La función recibe una lista de vértices, la cantidad de vértices es indeterminada. Cada vértice es un vector de dos elementos con la posición (x, y). La función debe devolver un float con la superficie del polígono.
+
+prueba = [[4], [5], [6]];
+p2 = [[1,1], [1,4], [5,1]];
+
+def poligonSurface(array):
+  result = 0
+  
+  for number in range(len(array)):
+    if (array[number] == array[-1]): result += array[number][0] * array[0][1];
+    else: result += array[number][0] * array[number + 1][1];
+    
+  return result;
+
+print(poligonSurface(p2));
