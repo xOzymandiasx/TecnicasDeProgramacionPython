@@ -46,7 +46,7 @@
 #     return "S";
 #   else:
 #     print(f"'{inputChoice}' no es una opción válida, vuelva a reingresarla.");
-#     menu();
+#     return menu();
      
 # menu();
 
@@ -94,4 +94,33 @@
 # print(menu(menu_clientes));
 
 
-# * 4) Realizar una función que permita el ingreso de los datos de un cliente (Nombre de la empresa, Nombre del contacto y email). La función devuelve una Tupla con dichos datos en el orden indicado.
+# # * 4) Realizar una función que permita el ingreso de los datos de un cliente (Nombre de la empresa, Nombre del contacto y email). La función devuelve una Tupla con dichos datos en el orden indicado.
+
+# def clientForm ():
+#   companyName = input("Ingrese el nombre de la empresa: ");
+#   contactName = input("Ingrese el nombre de la persona: ");
+#   email = input("Ingrese el email de la persona: ");
+
+#   return (companyName, contactName, email);
+
+# print(clientForm());
+
+
+# * 5) Realizar una función que reciba 3 parametros día, mes y año (tipo de dato int) de una fecha y devuelva la fecha en formato ISO 8601. Si la fecha es válida, la función debe devolver la fecha con el tipo de dato string en formato ISO 8601. Si la fecha es invalida, la función debe devolver un None (Null).
+# ? Por ejemplo:
+# ? FechaISO(20,10,2020) debe devolver: “2020-10-20”
+# ? FechaISO(10,2,2020) debe devolver: “2020-02-10”
+# ? FechaISO(30,2,2020) debe devolver: None
+
+from datetime import datetime;
+
+def formatDate(day, month, year):
+  try:
+    date = datetime.strptime(f"{year}-{month}-{day}", "%Y-%m-%d");
+    return date.date().strftime("%Y-%m-%d");
+  except ValueError:
+    return None;
+    
+
+print(formatDate(2024, 2, 29));
+print(formatDate(2023, 2, 29));
