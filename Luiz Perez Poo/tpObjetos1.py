@@ -41,40 +41,72 @@
 # ¿Qué estructura de datos necesita para almacenar la información?
 # Realizar el programa usando objetos para almacenar la información de las habitaciones. Está prohibido el
 # uso de las instrucciones print() e input() dentro de las clases (capricho del profesor).
-
+  
 class Habitacion:
-  def __init__(self, largo: int, alto: int, aberturas: int = 0) -> None:
+  def __init__(self, largo: int, alto: int) -> None:
     self.largo = largo;
     self.ancho = alto;
-    while aberturas > 4:
-      aberturas = int(input("No puedes tener más de 4 aberturas, reingrese el valor: "));
-    self.aberturas = aberturas;
+    self.aberturas = [];
     
-  def supHabitacion(self) -> int:
+  def supHabitacion(self) -> float:
     return self.largo * self.ancho;
   
-  def supAberturas(self) -> int:
-    totalAberturas = 0
-    for nAbertura in range(self.aberturas):
-      largo = int(input(f"ingrese el largo de la abertura {nAbertura + 1}: "));
-      alto = int(input(f"Ingrese el alto de la abertura {nAbertura + 1}: "));
-      totalAberturas += largo * alto;
-      
-    return totalAberturas;
+  def agregarAbertura(self, abertura: {int}) -> None:
+    self.aberturas.append(abertura);
+    
+  def supAberturas(self) -> float:
+    total = 0;
+    for abertura in self.aberturas:
+      total += abertura["largo"] * abertura["alto"];
+    return total;
+  
+  def supTotal(self) -> float:
+    return self.supHabitacion() - self.supAberturas();
 
 class Pintor:
   def __init__(self) -> None:
     self.habitaciones = [];
     
-  def agregarHabitaciones(self, cantidad: int) -> None:
-    for habitacion in range(cantidad):
-      pass
-  
+  def agregarHabitaciones(self, habitacion: Habitacion) -> None:
+    self.habitaciones.append(habitacion);
+    
+  def agAbertura(self, ubicacion: int, largo: float, alto: float) -> None:
+    self.habitaciones[ubicacion].agregarAbertura({"largo": largo, "alto": alto});
+    
+  def calSupTotal(self) -> float:
+    total = 0
+    for habitacion in self.habitaciones:
+      total += habitacion.supTotal();
+    return total;
+    
+pintor = Pintor();
+pintor.agregarHabitaciones(Habitacion(3, 3));
+pintor.agregarHabitaciones(Habitacion(3, 3));
+pintor.agAbertura(0, 2, 2);
+pintor.habitaciones[1].agregarAbertura({"largo": 2, "alto": 2});
+print(pintor.habitaciones[0].aberturas);
+print(pintor.habitaciones[0].supAberturas());
+print(pintor.habitaciones[0].supTotal());
+print(pintor.calSupTotal());
 
-room = Habitacion(3, 3, 2);
-print(room.supHabitacion())
-print(room.aberturas);
-print(room.supAberturas())
+  
+# def agAberturas(cantidad: int) -> None: #Funcion para agregar aaberturas a la clase habitacion
+#   for value in range(cantidad):
+#     largo = float(input(f"ingrese el largo de la abertura {value + 1}: "));
+#     alto = float(input(f"ingrese el alto de la abertura {value + 1}: "));
+#     abertura = Abertura(largo, alto);
+#     room.agregarAbertura(abertura);
+
+# pintoPintor = Pintor();
+# pintoPintor.agregarHabitaciones(Habitacion(5, 6));
+# print(pintoPintor.habitaciones);
+# pintoPintor.habitaciones[0].agregarAbertura(Abertura(5, 3));
+# print(pintoPintor.habitaciones[0].aberturas.supAbertura[0]());
+# room = Habitacion(3, 3);
+# agAberturas(2);
+# print(room.aberturas);
+# print(room.supHabitacion())
+
 
 # # 3) Realizar el programa usando objetos. Está prohibido el uso de las instrucciones print() e input() dentro de
 # # las clases (capricho del profesor).
