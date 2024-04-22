@@ -135,7 +135,7 @@ class Pais:
     self.nombre = nombre;
     self.capital = capital;
     self.poblacion = poblacion;
-    self.limitrifes = [];
+    self.limitrofes = [];
 
 class Mapa:
   def __init__(self) -> None:
@@ -144,7 +144,7 @@ class Mapa:
   def cargarPais(self, pais: Pais) -> None:
     self.paises.append(pais);
     
-  def limitrofes(self, pais: str, limitrofe: str) -> str:
+  def limitrofes(self, pais: str, limitrofe: str) -> None:
     existe = False;
     limit = False;
     for values in self.paises:
@@ -155,14 +155,21 @@ class Mapa:
       if limitrofe in values.nombre:
         limit = True;
         break;
-        
-    return existe and limit;
       
-    
+    if existe and limit:
+      for values in self.paises:
+        if pais == values.nombre and limitrofe not in values.limitrofes:
+          values.limitrofes.append(limitrofe);
+        elif limitrofe == values.nombre and pais not in values.limitrofes:
+          values.limitrofes.append(pais);
+  
 argentina = Pais("Argentina", "Buenos Aires", 46000000);
 uruguay = Pais("Uruguay", "Montevideo", 4500000);
 mundi = Mapa();
 mundi.cargarPais(argentina);
 mundi.cargarPais(uruguay);
-print(mundi.limitrofes("Argentina", "Argentina"))
+mundi.limitrofes("Argentina", "Uruguay");
+mundi.limitrofes("Argentina", "Uruguay");
+print(mundi.paises[0].limitrofes)
+print(mundi.paises[1].limitrofes)
   
