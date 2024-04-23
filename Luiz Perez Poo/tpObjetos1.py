@@ -142,6 +142,9 @@ class Mapa:
     self.paises = [];
     
   def cargarPais(self, pais: Pais) -> None:
+    for value in self.paises:
+      if value.nombre == pais.nombre: return "El país ya existe";
+      
     self.paises.append(pais);
     
   def limitrofes(self, pais: str, limitrofe: str) -> None:
@@ -163,13 +166,26 @@ class Mapa:
         elif limitrofe == values.nombre and pais not in values.limitrofes:
           values.limitrofes.append(pais);
   
+  def selectLimitrofes(self, nombre: str) -> object:
+    for value in self.paises:
+      if value.nombre == nombre: return value.limitrofes;
+  
+nPais = input("Ingrese el nombre del pais: ");
+cPais = input("Ingrese la capital del pais: ");
+pPais = input("Ingrese la poblacion del pais: ");
 argentina = Pais("Argentina", "Buenos Aires", 46000000);
 uruguay = Pais("Uruguay", "Montevideo", 4500000);
+chile = Pais("Chile", "Santiago", 2500000);
 mundi = Mapa();
 mundi.cargarPais(argentina);
 mundi.cargarPais(uruguay);
+mundi.cargarPais(uruguay);
+mundi.cargarPais(chile);
+mundi.cargarPais(Pais(nPais, cPais, pPais));
+print(mundi.paises);
 mundi.limitrofes("Argentina", "Uruguay");
 mundi.limitrofes("Argentina", "Uruguay");
+mundi.limitrofes("Argentina", "Chile");
+print(mundi.selectLimitrofes("Argentina"));
 print(mundi.paises[0].limitrofes)
 print(mundi.paises[1].limitrofes)
-  
